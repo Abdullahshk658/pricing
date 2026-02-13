@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "engines": { "node": ">=20.0.0" },
+    "engines": {
+      "node": ">=20.0.0"
+    },
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit -p tsconfig.typecheck.json",
-    "seed": "node scripts/seed-products.mjs"
+    "seed": "node --env-file=.env scripts/seed-products.mjs",
+    "db:check": "node scripts/db.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -50,6 +53,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
+    "dotenv": "^17.3.1",
     "embla-carousel-react": "^8.3.0",
     "eslint": "8.49.0",
     "eslint-config-next": "^14.2.0",
